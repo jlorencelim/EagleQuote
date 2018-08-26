@@ -1,0 +1,51 @@
+PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - IQKeyboardManager (6.0.3)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - SwifterSwift (4.3.0):
+    - SwifterSwift/AppKit (= 4.3.0)
+    - SwifterSwift/CoreGraphics (= 4.3.0)
+    - SwifterSwift/CoreLocation (= 4.3.0)
+    - SwifterSwift/Foundation (= 4.3.0)
+    - SwifterSwift/MapKit (= 4.3.0)
+    - SwifterSwift/SwiftStdlib (= 4.3.0)
+    - SwifterSwift/UIKit (= 4.3.0)
+  - SwifterSwift/AppKit (4.3.0)
+  - SwifterSwift/CoreGraphics (4.3.0)
+  - SwifterSwift/CoreLocation (4.3.0)
+  - SwifterSwift/Foundation (4.3.0)
+  - SwifterSwift/MapKit (4.3.0)
+  - SwifterSwift/SwiftStdlib (4.3.0)
+  - SwifterSwift/UIKit (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - IQKeyboardManager
+  - R.swift
+  - SwifterSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - IQKeyboardManager
+    - R.swift
+    - R.swift.Library
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SwifterSwift: f3fce2b9fc5b9d8fda6eec33825e5243c60aebba
+
+PODFILE CHECKSUM: 077a012f0d19a0e1d11add446b636bc5eabc7f2e
+
+COCOAPODS: 1.5.3
