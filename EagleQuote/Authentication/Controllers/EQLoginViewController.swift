@@ -51,7 +51,8 @@ class EQLoginViewController: UIViewController {
                     let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
                     alert.show()
                 } else {
-                    // TODO: go to dashboard
+                    // go to dashboard
+                    self.present(R.storyboard.home().instantiateInitialViewController()!, animated:true, completion:nil)
                 }
             }
         }
