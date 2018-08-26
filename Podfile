@@ -8,17 +8,17 @@ target 'EagleQuote' do
   # Pods for EagleQuote
   
   # https://cocoapods.org/pods/Alamofire
-    pod 'Alamofire'
+  pod 'Alamofire'
 
   # https://github.com/Alamofire/AlamofireImage
-    pod 'AlamofireImage'
+  pod 'AlamofireImage'
 
   # https://cocoapods.org/pods/IQKeyboardManager
-    pod 'IQKeyboardManager'
+  pod 'IQKeyboardManager'
 
   # https://github.com/mac-cain13/R.swift
-    pod 'R.swift'
+  pod 'R.swift'
 
   # https://cocoapods.org/pods/SwifterSwift
-    pod 'SwifterSwift'  
+  pod 'SwifterSwift'  
 end

@@ -74,14 +74,14 @@
                                                 </constraints>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7yr-b3-4kI">
-                                <rect key="frame" x="114.99999999999999" y="423.66666666666669" width="184.66666666666663" height="32"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7yr-b3-4kI">
+                                <rect key="frame" x="116.33333333333333" y="423.66666666666669" width="181.66666666666669" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF5-4f-ojZ">
                                         <rect key="frame" x="0.0" y="0.0" width="112.66666666666667" height="32"/>
@@ -90,9 +90,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo7-lb-ZIs">
-                                        <rect key="frame" x="127.66666666666666" y="0.0" width="57" height="32"/>
+                                        <rect key="frame" x="122.66666666666669" y="0.0" width="59" height="32"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Sign up">
+                                        <state key="normal" title="Sign Up">
                                             <color key="titleColor" name="Button"/>
                                         </state>
                                     </button>
@@ -116,6 +116,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onSignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFM-ud-kkU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="Background"/>
@@ -135,6 +138,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="BIt-Wj-pWf" id="g3o-FC-esJ"/>
+                        <outlet property="passwordTextField" destination="wWC-QR-VE6" id="9sp-0B-3pt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

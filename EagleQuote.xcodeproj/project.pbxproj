@@ -17,6 +17,7 @@
 		18D58C7721324683004C305B /* EQSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7621324683004C305B /* EQSingleton.swift */; };
 		18D58C7A21324769004C305B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7921324769004C305B /* R.generated.swift */; };
 		18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7F21324AE8004C305B /* EQLoginViewController.swift */; };
+		18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */; };
 		82E23BF7554E9E1F919E6CED /* Pods_EagleQuote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		18D58C7621324683004C305B /* EQSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSingleton.swift; sourceTree = "<group>"; };
 		18D58C7921324769004C305B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		18D58C7F21324AE8004C305B /* EQLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLoginViewController.swift; sourceTree = "<group>"; };
+		18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIAuthentication.swift; sourceTree = "<group>"; };
 		209A5B10D320CEE714BD4FEA /* Pods-EagleQuote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.release.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.release.xcconfig"; sourceTree = "<group>"; };
 		E9997C6B6E89AB82E3623E30 /* Pods-EagleQuote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EagleQuote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				18D58C702132453F004C305B /* EQAPIClient.swift */,
+				18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
 				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
+				18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */,
 				18D58C73213245B3004C305B /* EQConstants.swift in Sources */,
 				18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */,
 				18D58C752132460A004C305B /* EQUtils.swift in Sources */,

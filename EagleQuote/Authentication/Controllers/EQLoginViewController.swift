@@ -8,28 +8,77 @@
 
 import UIKit
 
+import SwifterSwift
+
+
 class EQLoginViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    // MARK: - Actions
+    
+    @IBAction func onSignInButtonPressed(_ sender: UIButton) {
+        let email = self.emailTextField.text!
+        let password = self.passwordTextField.text!
+        
+        if email == "" {
+            // check if email field has value
+            let alert =  UIAlertController(title: "Email required", message: "Please enter your email.")
+            alert.show()
+        } else if !EQUtils.isValidEmail(email) {
+            // ckeck if email is valid
+            let alert =  UIAlertController(title: "Email not valid", message: "Please check the email that you entered.")
+            alert.show()
+        } else if password == "" {
+            // check if passwrod field has value
+            let alert =  UIAlertController(title: "Password required", message: "Please enter a password.")
+            alert.show()
+        } else {
+            // show loading
+            EQUtils.showLoadingAlert()
+            
+            EQAPIAuthentication.login(email: email, password: password) { (response) in
+                // hide loading
+                if self.presentedViewController is UIAlertController {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+                if let error = response!["error"] as? String {
+                    // show error message
+                    let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
+                    alert.show()
+                } else {
+                    // TODO: go to dashboard
+                }
+            }
+        }
+    }
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension EQLoginViewController: UITextFieldDelegate {
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
+    
 }

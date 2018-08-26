@@ -161,9 +161,7 @@ class EQAPIClient: NSObject {
             switch response.result {
             case .success:
                 if let data = response.result.value as? [String : Any] {
-                    completion(data)
-                } else if let data = response.result.value as? [Any] {
-                    completion(["data": data])
+                    completion(data["data"] as? [String : Any])
                 } else {
                     return
                 }
@@ -175,7 +173,7 @@ class EQAPIClient: NSObject {
                     do {
                         let errors = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                         
-                        completion(["error": errors!])
+                        completion(errors!["data"] as? [String : Any])
                     } catch {
                         print(error.localizedDescription)
                     }
