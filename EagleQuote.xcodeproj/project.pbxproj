@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
-		18D58C5F213240CA004C305B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5E213240CA004C305B /* ViewController.swift */; };
-		18D58C62213240CA004C305B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Main.storyboard */; };
+		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
 		18D58C64213240CB004C305B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C63213240CB004C305B /* Assets.xcassets */; };
 		18D58C67213240CB004C305B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C65213240CB004C305B /* LaunchScreen.storyboard */; };
 		18D58C712132453F004C305B /* EQAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C702132453F004C305B /* EQAPIClient.swift */; };
@@ -17,14 +16,14 @@
 		18D58C752132460A004C305B /* EQUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C742132460A004C305B /* EQUtils.swift */; };
 		18D58C7721324683004C305B /* EQSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7621324683004C305B /* EQSingleton.swift */; };
 		18D58C7A21324769004C305B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7921324769004C305B /* R.generated.swift */; };
+		18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7F21324AE8004C305B /* EQLoginViewController.swift */; };
 		82E23BF7554E9E1F919E6CED /* Pods_EagleQuote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18D58C5E213240CA004C305B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		18D58C63213240CB004C305B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D58C66213240CB004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D58C68213240CB004C305B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		18D58C742132460A004C305B /* EQUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQUtils.swift; sourceTree = "<group>"; };
 		18D58C7621324683004C305B /* EQSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSingleton.swift; sourceTree = "<group>"; };
 		18D58C7921324769004C305B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		18D58C7F21324AE8004C305B /* EQLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLoginViewController.swift; sourceTree = "<group>"; };
 		209A5B10D320CEE714BD4FEA /* Pods-EagleQuote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.release.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.release.xcconfig"; sourceTree = "<group>"; };
 		E9997C6B6E89AB82E3623E30 /* Pods-EagleQuote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EagleQuote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,9 +81,8 @@
 			children = (
 				18D58C5C213240CA004C305B /* AppDelegate.swift */,
 				18D58C63213240CB004C305B /* Assets.xcassets */,
-				18D58C5E213240CA004C305B /* ViewController.swift */,
-				18D58C60213240CA004C305B /* Main.storyboard */,
 				18D58C65213240CB004C305B /* LaunchScreen.storyboard */,
+				18D58C7C21324A58004C305B /* Authentication */,
 				18D58C6F213244D7004C305B /* API */,
 				18D58C7B21324797004C305B /* Supporting Files */,
 				18D58C6E213244C2004C305B /* Utils */,
@@ -116,6 +115,31 @@
 				18D58C68213240CB004C305B /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18D58C7C21324A58004C305B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				18D58C7D21324A78004C305B /* Layouts */,
+				18D58C7E21324A8E004C305B /* Controllers */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		18D58C7D21324A78004C305B /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				18D58C60213240CA004C305B /* Authentication.storyboard */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		18D58C7E21324A8E004C305B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18D58C7F21324AE8004C305B /* EQLoginViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9E466FD1307DAE4FAFC46067 /* Pods */ = {
@@ -191,7 +215,7 @@
 			files = (
 				18D58C67213240CB004C305B /* LaunchScreen.storyboard in Resources */,
 				18D58C64213240CB004C305B /* Assets.xcassets in Resources */,
-				18D58C62213240CA004C305B /* Main.storyboard in Resources */,
+				18D58C62213240CA004C305B /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,12 +286,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D58C5F213240CA004C305B /* ViewController.swift in Sources */,
 				18D58C7A21324769004C305B /* R.generated.swift in Sources */,
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
 				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
 				18D58C73213245B3004C305B /* EQConstants.swift in Sources */,
+				18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */,
 				18D58C752132460A004C305B /* EQUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,12 +299,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18D58C60213240CA004C305B /* Main.storyboard */ = {
+		18D58C60213240CA004C305B /* Authentication.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18D58C61213240CA004C305B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Authentication.storyboard;
 			sourceTree = "<group>";
 		};
 		18D58C65213240CB004C305B /* LaunchScreen.storyboard */ = {
