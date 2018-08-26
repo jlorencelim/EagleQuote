@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1800533F2132815800CD6249 /* EQDrawerItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800533E2132815800CD6249 /* EQDrawerItemTableViewCell.swift */; };
+		18005341213281DB00CD6249 /* DrawerItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18005340213281DB00CD6249 /* DrawerItem.xib */; };
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
 		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
 		18D58C64213240CB004C305B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C63213240CB004C305B /* Assets.xcassets */; };
@@ -20,10 +22,13 @@
 		18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */; };
 		18D58C8821326CD0004C305B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C8721326CD0004C305B /* Home.storyboard */; };
 		18D58C8A21326D4F004C305B /* EQHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C8921326D4F004C305B /* EQHomeViewController.swift */; };
+		18D58C8C21327DC4004C305B /* EQDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C8B21327DC4004C305B /* EQDrawerViewController.swift */; };
 		82E23BF7554E9E1F919E6CED /* Pods_EagleQuote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1800533E2132815800CD6249 /* EQDrawerItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDrawerItemTableViewCell.swift; sourceTree = "<group>"; };
+		18005340213281DB00CD6249 /* DrawerItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawerItem.xib; sourceTree = "<group>"; };
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
@@ -39,6 +44,7 @@
 		18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIAuthentication.swift; sourceTree = "<group>"; };
 		18D58C8721326CD0004C305B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		18D58C8921326D4F004C305B /* EQHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQHomeViewController.swift; sourceTree = "<group>"; };
+		18D58C8B21327DC4004C305B /* EQDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQDrawerViewController.swift; sourceTree = "<group>"; };
 		209A5B10D320CEE714BD4FEA /* Pods-EagleQuote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.release.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.release.xcconfig"; sourceTree = "<group>"; };
 		E9997C6B6E89AB82E3623E30 /* Pods-EagleQuote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EagleQuote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote.debug.xcconfig"; sourceTree = "<group>"; };
 		F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EagleQuote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +68,14 @@
 				F1D09F983BBB2991459AD30D /* Pods_EagleQuote.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1800533D2132813200CD6249 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1800533E2132815800CD6249 /* EQDrawerItemTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		18D58C50213240C9004C305B = {
@@ -155,6 +169,7 @@
 			children = (
 				18D58C8421326C81004C305B /* Layouts */,
 				18D58C8521326C89004C305B /* Controllers */,
+				1800533D2132813200CD6249 /* Cells */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -163,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				18D58C8721326CD0004C305B /* Home.storyboard */,
+				18005340213281DB00CD6249 /* DrawerItem.xib */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				18D58C8921326D4F004C305B /* EQHomeViewController.swift */,
+				18D58C8B21327DC4004C305B /* EQDrawerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +267,7 @@
 				18D58C64213240CB004C305B /* Assets.xcassets in Resources */,
 				18D58C62213240CA004C305B /* Authentication.storyboard in Resources */,
 				18D58C8821326CD0004C305B /* Home.storyboard in Resources */,
+				18005341213281DB00CD6249 /* DrawerItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -306,6 +325,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,9 +345,11 @@
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
 				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
 				18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */,
+				18D58C8C21327DC4004C305B /* EQDrawerViewController.swift in Sources */,
 				18D58C73213245B3004C305B /* EQConstants.swift in Sources */,
 				18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */,
 				18D58C8A21326D4F004C305B /* EQHomeViewController.swift in Sources */,
+				1800533F2132815800CD6249 /* EQDrawerItemTableViewCell.swift in Sources */,
 				18D58C752132460A004C305B /* EQUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

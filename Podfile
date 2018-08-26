@@ -21,4 +21,7 @@ target 'EagleQuote' do
 
   # https://cocoapods.org/pods/SwifterSwift
   pod 'SwifterSwift'  
+
+  # https://github.com/jonkykong/SideMenu
+  pod 'SideMenu'
 end

@@ -6,6 +6,7 @@ PODS:
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
   - R.swift.Library (4.0.0)
+  - SideMenu (4.0.0)
   - SwifterSwift (4.3.0):
     - SwifterSwift/AppKit (= 4.3.0)
     - SwifterSwift/CoreGraphics (= 4.3.0)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AlamofireImage
   - IQKeyboardManager
   - R.swift
+  - SideMenu
   - SwifterSwift
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - R.swift
     - R.swift.Library
+    - SideMenu
     - SwifterSwift
 
 SPEC CHECKSUMS:
@@ -44,8 +47,9 @@ SPEC CHECKSUMS:
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwifterSwift: f3fce2b9fc5b9d8fda6eec33825e5243c60aebba
 
-PODFILE CHECKSUM: 94f49e06b9fcff3011dc583927cadde30368ff3f
+PODFILE CHECKSUM: 15f4107d29ed00e0d803023cf53848f2bf5c0674
 
 COCOAPODS: 1.5.3

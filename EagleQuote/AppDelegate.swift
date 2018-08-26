@@ -9,13 +9,13 @@
 import UIKit
 
 import IQKeyboardManager
+import SideMenu
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -55,6 +55,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         IQKeyboardManager.shared().keyboardDistanceFromTextField = 10
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+    }
+    
+    private func setupGlobalUIAdditions(with window: UIWindow?) {
+        let fontName = "Helvetica"
+        
+        let navAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: fontName, size: 18)!,
+                                                      NSAttributedStringKey.foregroundColor: UIColor.white]
+        let tabAttrs = [NSAttributedStringKey.font: UIFont(name: fontName, size: 12)!]
+        
+        UINavigationBar.appearance().barTintColor = R.color.background()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = navAttrs
+        UINavigationBar.appearance().shadowImage = UIImage()
+
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+
+        // Tab Bar
+        UITabBar.appearance().barTintColor = R.color.background()
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBarItem.appearance().setTitleTextAttributes(tabAttrs, for: .normal)
+        
+        SideMenuManager.default.menuFadeStatusBar = false
+        
+        // Window
+        window?.tintColor = R.color.background()
     }
     
 }

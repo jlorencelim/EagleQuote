@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drawerItemCell" rowHeight="73" id="spu-Ah-Mi7" customClass="EQDrawerItemTableViewCell" customModule="EagleQuote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="73"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="spu-Ah-Mi7" id="iiC-4y-BWj">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnz-6m-tZs">
+                        <rect key="frame" x="0.0" y="0.0" width="377" height="67.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-Zb-y1A">
+                                <rect key="frame" x="173" y="24.5" width="30" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.086274509803921567" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E8P-Zb-y1A" firstAttribute="centerY" secondItem="Gnz-6m-tZs" secondAttribute="centerY" id="nL2-Zp-YkE"/>
+                            <constraint firstItem="E8P-Zb-y1A" firstAttribute="centerX" secondItem="Gnz-6m-tZs" secondAttribute="centerX" id="wAo-l8-Ylk"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.14901960780000001" green="0.12941176469999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Gnz-6m-tZs" firstAttribute="leading" secondItem="iiC-4y-BWj" secondAttribute="leading" id="EXc-vM-vTo"/>
+                    <constraint firstAttribute="bottom" secondItem="Gnz-6m-tZs" secondAttribute="bottom" constant="5" id="J3G-aH-QgB"/>
+                    <constraint firstItem="Gnz-6m-tZs" firstAttribute="top" secondItem="iiC-4y-BWj" secondAttribute="top" id="X0p-e8-lP1"/>
+                    <constraint firstAttribute="trailing" secondItem="Gnz-6m-tZs" secondAttribute="trailing" id="xDY-SF-PfJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="highlightView" destination="Gnz-6m-tZs" id="8xM-In-zAu"/>
+                <outlet property="titleLabel" destination="E8P-Zb-y1A" id="46V-Sz-App"/>
+            </connections>
+            <point key="canvasLocation" x="30.5" y="63.5"/>
+        </tableViewCell>
+    </objects>
+</document>
