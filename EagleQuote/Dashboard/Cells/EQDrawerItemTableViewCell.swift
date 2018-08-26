@@ -13,6 +13,7 @@ class EQDrawerItemTableViewCell: UITableViewCell {
     // MARK: - Outlets
     
     @IBOutlet weak var highlightView: UIView!
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - Lifecycle

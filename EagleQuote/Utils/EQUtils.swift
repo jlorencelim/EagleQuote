@@ -93,7 +93,7 @@ class EQUtils: NSObject {
     }
     
     class func showLoadingAlert() {
-        let alert = UIAlertController(title: "Loading...", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Please wait...", message: nil, preferredStyle: .alert)
         alert.show()
     }
     

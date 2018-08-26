@@ -29,7 +29,20 @@ class EQDrawerViewController: UIViewController {
     
     // MARK: - Contstants
     
-    let drawerItems = ["Dashboard", "Settings", "Sign Out"]
+    let drawerItems = [
+        [
+            "title": "Dashboard",
+            "image": "home",
+        ],
+        [
+            "title": "Settings",
+            "image": "settings",
+        ],
+        [
+            "title": "Sign Out",
+            "image": "signOut",
+        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +75,8 @@ extension EQDrawerViewController: UITableViewDataSource {
             cell.highlightView.backgroundColor = R.color.button()
         }
 
-        cell.titleLabel?.text = self.drawerItems[indexPath.row]
+        cell.titleLabel?.text = self.drawerItems[indexPath.row]["title"]
+        cell.iconImageView.image = UIImage(named: self.drawerItems[indexPath.row]["image"]!)?.filled(withColor: UIColor.white)
         
         return cell
     }
@@ -79,17 +93,16 @@ extension EQDrawerViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case DrawerSelectionCell.signOut.rawValue:
-            EQAPIAuthentication.logout { (response) in
-                
-                if let error = response!["error"] as? String {
-                    // show error message
-                    let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
-                    alert.show()
-                } else {
-                    // go to login
-                    self.present(R.storyboard.authentication().instantiateInitialViewController()!,
-                                 animated: true,
-                                 completion: nil)
+            self.dismiss(animated: true) { () -> Void in
+                EQAPIAuthentication.logout { (response) in
+                    if let error = response!["error"] as? String {
+                        // show error message
+                        let alert =  UIAlertController(title: "Sign-out Attempt", message: error)
+                        alert.show()
+                    } else {
+                        // go to login
+                        UIApplication.shared.keyWindow?.rootViewController = R.storyboard.authentication().instantiateInitialViewController()
+                    }
                 }
             }
         default:
@@ -105,3 +118,5 @@ extension EQDrawerViewController: UITableViewDelegate {
     }
     
 }
+
+

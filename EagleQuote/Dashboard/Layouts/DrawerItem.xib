@@ -21,17 +21,30 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnz-6m-tZs">
                         <rect key="frame" x="0.0" y="0.0" width="377" height="67.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-Zb-y1A">
-                                <rect key="frame" x="173" y="24.5" width="30" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-WF-UBl">
+                                <rect key="frame" x="156" y="21.5" width="65" height="25"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-OB-h32">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="66g-Na-xBq"/>
+                                            <constraint firstAttribute="height" constant="25" id="Od0-4G-kkK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-Zb-y1A">
+                                        <rect key="frame" x="35" y="0.0" width="30" height="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.086274509803921567" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="E8P-Zb-y1A" firstAttribute="centerY" secondItem="Gnz-6m-tZs" secondAttribute="centerY" id="nL2-Zp-YkE"/>
-                            <constraint firstItem="E8P-Zb-y1A" firstAttribute="centerX" secondItem="Gnz-6m-tZs" secondAttribute="centerX" id="wAo-l8-Ylk"/>
+                            <constraint firstItem="H4P-WF-UBl" firstAttribute="centerX" secondItem="Gnz-6m-tZs" secondAttribute="centerX" id="3mR-zc-fAK"/>
+                            <constraint firstItem="H4P-WF-UBl" firstAttribute="centerY" secondItem="Gnz-6m-tZs" secondAttribute="centerY" id="4G0-oo-KrA"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,6 +58,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="highlightView" destination="Gnz-6m-tZs" id="8xM-In-zAu"/>
+                <outlet property="iconImageView" destination="3V0-OB-h32" id="mEv-93-Vja"/>
                 <outlet property="titleLabel" destination="E8P-Zb-y1A" id="46V-Sz-App"/>
             </connections>
             <point key="canvasLocation" x="30.5" y="63.5"/>

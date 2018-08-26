@@ -37,23 +37,21 @@ class EQLoginViewController: UIViewController {
             let alert =  UIAlertController(title: "Password required", message: "Please enter a password.")
             alert.show()
         } else {
-            // show loading
+            // show alert
             EQUtils.showLoadingAlert()
             
             EQAPIAuthentication.login(email: email, password: password) { (response) in
-                // hide loading
-                if self.presentedViewController is UIAlertController {
-                    self.dismiss(animated: true, completion: nil)
-                }
+                self.dismiss(animated: true, completion: {
+                    if let error = response!["error"] as? String {
+                        // show error message
+                        let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
+                        alert.show()
+                    } else {
+                        // go to dashboard
+                        self.present(R.storyboard.home().instantiateInitialViewController()!, animated:true, completion:nil)
+                    }
+                })
                 
-                if let error = response!["error"] as? String {
-                    // show error message
-                    let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
-                    alert.show()
-                } else {
-                    // go to dashboard
-                    self.present(R.storyboard.home().instantiateInitialViewController()!, animated:true, completion:nil)
-                }
             }
         }
     }

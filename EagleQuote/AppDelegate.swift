@@ -65,23 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: fontName, size: 18)!,
                                                       NSAttributedStringKey.foregroundColor: UIColor.white]
-        let tabAttrs = [NSAttributedStringKey.font: UIFont(name: fontName, size: 12)!]
         
+        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#271f4a")
         UINavigationBar.appearance().barTintColor = R.color.background()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = navAttrs
         UINavigationBar.appearance().shadowImage = UIImage()
 
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-
-        // Tab Bar
-        UITabBar.appearance().barTintColor = R.color.background()
-        UITabBar.appearance().tintColor = UIColor.white
-        UITabBarItem.appearance().setTitleTextAttributes(tabAttrs, for: .normal)
-        
-        SideMenuManager.default.menuFadeStatusBar = false
-        
         // Window
         window?.tintColor = R.color.background()
     }
