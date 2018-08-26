@@ -8,8 +8,17 @@
 
 import UIKit
 
+enum DrawerSelectionCell: Int {
+    case dashboard = 0
+    case settings = 1
+    case signOut = 2
+}
+
 class EQDrawerViewController: UIViewController {
 
+    // MARK: - Constants
+    
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView! {
@@ -35,17 +44,6 @@ class EQDrawerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -71,3 +69,39 @@ extension EQDrawerViewController: UITableViewDataSource {
     
 }
 
+extension EQDrawerViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.drawerItemCell, for: indexPath)!
+        cell.highlightView.backgroundColor = R.color.button()
+        
+        self.tableView.reloadData()
+        
+        switch indexPath.row {
+        case DrawerSelectionCell.signOut.rawValue:
+            EQAPIAuthentication.logout { (response) in
+                
+                if let error = response!["error"] as? String {
+                    // show error message
+                    let alert =  UIAlertController(title: "Sign-in Attempt", message: error)
+                    alert.show()
+                } else {
+                    // go to login
+                    self.present(R.storyboard.authentication().instantiateInitialViewController()!,
+                                 animated: true,
+                                 completion: nil)
+                }
+            }
+        default:
+            return
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.drawerItemCell, for: indexPath)!
+        cell.highlightView.backgroundColor = UIColor(hexString: "#1c163e")
+        
+        self.tableView.reloadData()
+    }
+    
+}

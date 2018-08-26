@@ -48,6 +48,10 @@ class EQUtils: NSObject {
         return UserDefaults.standard.value(forKey: key)
     }
     
+    class func removeUserDefaultValue(with key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+    
     // MARK: - App-wide helper methods
     
     class func dictionary(from filename: String) -> [String: Any]? {

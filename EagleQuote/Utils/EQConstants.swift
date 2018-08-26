@@ -25,6 +25,7 @@ struct APIConstants {
 }
 
 struct UserDefaultsConstants {
-    static let AuthInstance = "AuthInstanceUserDefaultsKey"
-    static let DeviceToken = "DeviceTokenUserDefaultsKey"
+    static let AuthToken = "AuthToken"
+    static let RefreshToken = "RefreshToken"
+    static let User = "User"
 }

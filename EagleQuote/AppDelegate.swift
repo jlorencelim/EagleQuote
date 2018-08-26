@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // set initial view controller
+        self.setInitialViewController()
+        
         // Third-party setup
         self.setupIQKeyboardManager()
         
@@ -81,6 +84,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Window
         window?.tintColor = R.color.background()
+    }
+    
+    private func setInitialViewController() {
+        if EQUtils.userDefaultsValue(with: UserDefaultsConstants.AuthToken) == nil {
+            let loginViewController = R.storyboard.authentication.instantiateInitialViewController()
+            self.window?.rootViewController = loginViewController
+        } else {
+            let homeViewController = R.storyboard.home.instantiateInitialViewController()
+            self.window?.rootViewController = homeViewController
+        }
     }
     
 }

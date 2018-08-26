@@ -14,5 +14,5 @@ final class IGCSingleton {
     private init() {}
     
     static let shared = IGCSingleton()
-
+    
 }

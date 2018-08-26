@@ -22,7 +22,7 @@ class EQAPIClient: NSObject {
     // MARK: - Lifecycle
     
     override init() {
-        self.authInstance = EQUtils.userDefaultsValue(with: UserDefaultsConstants.AuthInstance) as? String
+        self.authInstance = EQUtils.userDefaultsValue(with: UserDefaultsConstants.AuthToken) as? String
         self.currentRequest = nil
         
         super.init()
@@ -125,9 +125,9 @@ class EQAPIClient: NSObject {
             params = queryParams
         }
         
-        var headers: HTTPHeaders = [:]
+        var headers: HTTPHeaders = ["api-version": "2.0"]
         if authenticated {
-            headers = ["Authorization": "Token \(self.authInstance!)"]
+            headers["Authorization"] = "Bearer \(self.authInstance!)"
         }
         
         // Default request is geared towards POST, PUT method encoding
