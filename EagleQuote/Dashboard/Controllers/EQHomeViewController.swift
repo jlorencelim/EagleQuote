@@ -13,6 +13,7 @@ class EQHomeViewController: UIViewController {
     // MARK: - Properties
     
     private var currentPage = 1
+    private var selectedQuote: EQQuote!
     private var quotes: [EQQuote] = []
     private var filteredQuotes: [String: [EQQuote]] = [:]
     private var totalQuotes = 0
@@ -71,6 +72,21 @@ class EQHomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let identifier = R.segue.eqHomeViewController.sendEmail.identifier
+        
+        switch segue.identifier {
+        case identifier?:
+            let controller = segue.destination as! EQSendEmailViewController
+            
+            controller.quote = self.selectedQuote
+        default:
+            return
+        }
     }
     
     // MARK: - Private Methods
@@ -181,14 +197,21 @@ extension EQHomeViewController: UISearchBarDelegate {
 extension EQHomeViewController: EQQuoteTableViewCellDelegate {
     
     func showActionSheet(_ controller: EQQuoteTableViewCell, quote: EQQuote) {
-        let actionSheet = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
-        
-        actionSheet.addAction(title: "Send Quote by Email", style: .default, isEnabled: true) { (alert: UIAlertAction!) in
-            // TODO: navigate to send mail
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            let actionSheet = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(title: "Send Quote by Email", style: .default, isEnabled: true) { (alert: UIAlertAction!) in
+                self.selectedQuote = quote
+                self.performSegue(withIdentifier: R.segue.eqHomeViewController.sendEmail, sender: self)
+            }
+            actionSheet.addAction(title: "Cancel", style: .cancel, isEnabled: true, handler: nil)
+            
+            topController.present(actionSheet, animated: true, completion: nil)
         }
-        actionSheet.addAction(title: "Cancel", style: .cancel, isEnabled: true, handler: nil)
-        
-        actionSheet.show()
         
     }
 }

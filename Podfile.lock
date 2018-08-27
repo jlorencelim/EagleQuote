@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.2)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
+  - ICInputAccessory/TokenField (1.5.0)
   - IQKeyboardManager (6.0.3)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
@@ -26,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - ICInputAccessory/TokenField
   - IQKeyboardManager
   - R.swift
   - SideMenu
@@ -35,6 +37,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - ICInputAccessory
     - IQKeyboardManager
     - R.swift
     - R.swift.Library
@@ -44,12 +47,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  ICInputAccessory: 0d4c52327f84c19bab55004b74cd298b9d8130ee
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwifterSwift: f3fce2b9fc5b9d8fda6eec33825e5243c60aebba
 
-PODFILE CHECKSUM: 15f4107d29ed00e0d803023cf53848f2bf5c0674
+PODFILE CHECKSUM: 6b52f99e1d77b10c304f44fedde07eed4b231db4
 
 COCOAPODS: 1.5.3

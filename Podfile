@@ -24,4 +24,7 @@ target 'EagleQuote' do
 
   # https://github.com/jonkykong/SideMenu
   pod 'SideMenu'
+
+  # https://github.com/polydice/ICInputAccessory
+  pod 'ICInputAccessory/TokenField'
 end

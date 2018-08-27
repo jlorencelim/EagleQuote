@@ -1,0 +1,6 @@
+framework module ICInputAccessory {
+  umbrella header "ICInputAccessory-umbrella.h"
+
+  export *
+  module * { export * }
+}

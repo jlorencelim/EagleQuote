@@ -58,11 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         IQKeyboardManager.shared().keyboardDistanceFromTextField = 10
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared().disabledDistanceHandlingClasses.add(EQSendEmailViewController.self)
     }
     
     private func setupGlobalUIAdditions(with window: UIWindow?) {
         let fontName = "Helvetica"
-        
         let navAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: fontName, size: 18)!,
                                                       NSAttributedStringKey.foregroundColor: UIColor.white]
         
@@ -71,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = navAttrs
-        UINavigationBar.appearance().shadowImage = UIImage()
 
         // Window
         window?.tintColor = R.color.background()

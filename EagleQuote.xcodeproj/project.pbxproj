@@ -20,6 +20,7 @@
 		18BB048C2133B2BC0054EF77 /* EQAPIQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */; };
 		18BB048E2133F2370054EF77 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BB048D2133F2370054EF77 /* LoadingCell.xib */; };
 		18BB04902133F2BB0054EF77 /* EQLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB048F2133F2BB0054EF77 /* EQLoadingTableViewCell.swift */; };
+		18BB0492213409F60054EF77 /* EQSendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB0491213409F60054EF77 /* EQSendEmailViewController.swift */; };
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
 		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
 		18D58C64213240CB004C305B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C63213240CB004C305B /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIQuote.swift; sourceTree = "<group>"; };
 		18BB048D2133F2370054EF77 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		18BB048F2133F2BB0054EF77 /* EQLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLoadingTableViewCell.swift; sourceTree = "<group>"; };
+		18BB0491213409F60054EF77 /* EQSendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSendEmailViewController.swift; sourceTree = "<group>"; };
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				18D58C8921326D4F004C305B /* EQHomeViewController.swift */,
 				18D58C8B21327DC4004C305B /* EQDrawerViewController.swift */,
+				18BB0491213409F60054EF77 /* EQSendEmailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-EagleQuote/Pods-EagleQuote-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ICInputAccessory/ICInputAccessory.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
@@ -367,6 +371,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICInputAccessory.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
@@ -389,6 +394,7 @@
 				1800534E2133039700CD6249 /* EQQuoteSectionTableViewCell.swift in Sources */,
 				18BB048C2133B2BC0054EF77 /* EQAPIQuote.swift in Sources */,
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
+				18BB0492213409F60054EF77 /* EQSendEmailViewController.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
 				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
 				18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */,
