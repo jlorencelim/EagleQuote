@@ -15,6 +15,8 @@ class EQHomeViewController: UIViewController {
     private var currentPage = 1
     private var quotes: [EQQuote] = []
     private var filteredQuotes: [String: [EQQuote]] = [:]
+    private var totalQuotes = 0
+    private var isLoading = true
     
     // MARK: - Outlets
     
@@ -47,6 +49,10 @@ class EQHomeViewController: UIViewController {
         self.cancelSearchButton.isHidden = true
         self.searchBarHeight.constant = 0
         self.searchBar.layoutIfNeeded()
+        self.searchBar.endEditing(true)
+        self.searchBar.text = ""
+        
+        self.loadData(search: nil)
     }
     
     // MARK: - Lifecycle
@@ -57,6 +63,7 @@ class EQHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.tableView.register(R.nib.quoteCell)
         self.tableView.register(R.nib.quoteSectionCell)
+        self.tableView.register(R.nib.loadingCell)
         
         self.loadData(search: nil)
     }
@@ -83,11 +90,16 @@ class EQHomeViewController: UIViewController {
                 }
             }
             
-            self.filteredQuotes = Dictionary(grouping: self.quotes, by: { $0.dateString() })
+            if let paging = response!["paging"] as? [String: Any] {
+                self.totalQuotes = paging["records"] as! Int
+            }
             
+            self.filteredQuotes = Dictionary(grouping: self.quotes, by: { $0.dateString() })
             if self.filteredQuotes.count > 0 {
                 self.tableView.isHidden = false
             }
+            
+            self.isLoading = false
             self.tableView.reloadData()
         }
     }
@@ -101,13 +113,21 @@ extension EQHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = Array(self.filteredQuotes.keys)[section]
-        return self.filteredQuotes[key]!.count
+        let keys = Array(self.filteredQuotes.keys)
+        let key = keys[section]
+        return self.isLoading ? self.filteredQuotes[keys[keys.count - 1]]!.count + 1 : self.filteredQuotes[key]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let keys = Array(self.filteredQuotes.keys)
+        let key = keys[indexPath.section]
+        
+        // show loading indicator
+        if self.isLoading && indexPath.section == keys.count - 1 && indexPath.row == self.filteredQuotes[key]!.count {
+            return tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadingCell, for: indexPath)!
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.quoteCell, for: indexPath)!
-        let key = Array(self.filteredQuotes.keys)[indexPath.section]
         let quote = self.filteredQuotes[key]![indexPath.row]
         
         cell.configure(quote: quote)
@@ -127,17 +147,32 @@ extension EQHomeViewController: UITableViewDelegate {
         return cell
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchBar.endEditing(true)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if self.quotes.count > 0 && self.quotes.count != self.totalQuotes && !self.isLoading && offsetY > contentHeight - scrollView.frame.size.height {
+            self.currentPage += 1
+            self.isLoading = true
+            self.tableView.reloadData()
+            
+            self.loadData(search: self.searchBar.text)
+        }
+    }
+    
 }
 
 extension EQHomeViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.quotes = []
-        self.loadData(search: searchText)
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
+        
+        self.quotes = []
+        self.loadData(search: searchBar.text)
     }
     
 }

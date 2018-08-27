@@ -12,13 +12,11 @@ class EQAPIQuote: NSObject {
 
     class func getQuote(page: Int, search: String?, completion: @escaping ([String: Any]?) -> Void) {
         let url = APIConstants.URL + "/quote/"
-        var params: [String: Any] = [
+        let params: [String: Any] = [
             "page": page,
+            "perPage": 20,
+            "search": search != nil ? search! : ""
         ]
-        
-        if let searchString = search {
-            params["search"] = searchString
-        }
         
         EQAPIClient().getRequest(for: url, queryParams: params, authenticated: true) { (data) in
             if let response = data!["response"] as? [String: Any] {
