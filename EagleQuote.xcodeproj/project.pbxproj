@@ -13,6 +13,10 @@
 		1800534A2132EEB600CD6249 /* EQQuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053492132EEB600CD6249 /* EQQuoteTableViewCell.swift */; };
 		1800534C2133008800CD6249 /* QuoteSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1800534B2133008800CD6249 /* QuoteSectionCell.xib */; };
 		1800534E2133039700CD6249 /* EQQuoteSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1800534D2133039700CD6249 /* EQQuoteSectionTableViewCell.swift */; };
+		180053512133077200CD6249 /* EQPremium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053502133077200CD6249 /* EQPremium.swift */; };
+		18005353213307FD00CD6249 /* EQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18005352213307FD00CD6249 /* EQClient.swift */; };
+		180053552133085F00CD6249 /* EQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053542133085F00CD6249 /* EQModel.swift */; };
+		180053572133089C00CD6249 /* EQQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053562133089C00CD6249 /* EQQuote.swift */; };
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
 		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
 		18D58C64213240CB004C305B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C63213240CB004C305B /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 		180053492132EEB600CD6249 /* EQQuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQQuoteTableViewCell.swift; sourceTree = "<group>"; };
 		1800534B2133008800CD6249 /* QuoteSectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteSectionCell.xib; sourceTree = "<group>"; };
 		1800534D2133039700CD6249 /* EQQuoteSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQQuoteSectionTableViewCell.swift; sourceTree = "<group>"; };
+		180053502133077200CD6249 /* EQPremium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQPremium.swift; sourceTree = "<group>"; };
+		18005352213307FD00CD6249 /* EQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQClient.swift; sourceTree = "<group>"; };
+		180053542133085F00CD6249 /* EQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQModel.swift; sourceTree = "<group>"; };
+		180053562133089C00CD6249 /* EQQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQQuote.swift; sourceTree = "<group>"; };
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
@@ -88,6 +96,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1800534F2133075200CD6249 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				180053542133085F00CD6249 /* EQModel.swift */,
+				180053562133089C00CD6249 /* EQQuote.swift */,
+				18005352213307FD00CD6249 /* EQClient.swift */,
+				180053502133077200CD6249 /* EQPremium.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		18D58C50213240C9004C305B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +134,7 @@
 				18D58C7C21324A58004C305B /* Authentication */,
 				18D58C8321326C6A004C305B /* Dashboard */,
 				18D58C6F213244D7004C305B /* API */,
+				1800534F2133075200CD6249 /* Models */,
 				18D58C7B21324797004C305B /* Supporting Files */,
 				18D58C6E213244C2004C305B /* Utils */,
 			);
@@ -355,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D58C7A21324769004C305B /* R.generated.swift in Sources */,
+				180053512133077200CD6249 /* EQPremium.swift in Sources */,
 				1800534E2133039700CD6249 /* EQQuoteSectionTableViewCell.swift in Sources */,
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
@@ -363,10 +384,13 @@
 				18D58C8C21327DC4004C305B /* EQDrawerViewController.swift in Sources */,
 				18D58C73213245B3004C305B /* EQConstants.swift in Sources */,
 				18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */,
+				180053572133089C00CD6249 /* EQQuote.swift in Sources */,
+				18005353213307FD00CD6249 /* EQClient.swift in Sources */,
 				1800534A2132EEB600CD6249 /* EQQuoteTableViewCell.swift in Sources */,
 				18D58C8A21326D4F004C305B /* EQHomeViewController.swift in Sources */,
 				1800533F2132815800CD6249 /* EQDrawerItemTableViewCell.swift in Sources */,
 				18D58C752132460A004C305B /* EQUtils.swift in Sources */,
+				180053552133085F00CD6249 /* EQModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
