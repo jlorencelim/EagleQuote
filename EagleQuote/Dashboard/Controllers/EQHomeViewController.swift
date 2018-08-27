@@ -29,6 +29,25 @@ class EQHomeViewController: UIViewController {
         }
     }
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
+    @IBOutlet weak var cancelSearchButton: UIButton!
+    
+    // MARK: - Actions
+    
+    @IBAction func onSearchButtonPressed(_ sender: UIBarButtonItem) {
+        if self.filteredQuotes.count > 0 {
+            self.cancelSearchButton.isHidden = false
+            self.searchBarHeight.constant = 44
+            self.searchBar.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func onCancelSearchButtonPressed(_ sender: UIButton) {
+        self.cancelSearchButton.isHidden = true
+        self.searchBarHeight.constant = 0
+        self.searchBar.layoutIfNeeded()
+    }
     
     // MARK: - Lifecycle
     
@@ -39,7 +58,7 @@ class EQHomeViewController: UIViewController {
         self.tableView.register(R.nib.quoteCell)
         self.tableView.register(R.nib.quoteSectionCell)
         
-        self.loadData()
+        self.loadData(search: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +68,8 @@ class EQHomeViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func loadData() {
-        EQAPIQuote.getQuote(page: self.currentPage, search: nil) { (response) in
+    private func loadData(search: String?) {
+        EQAPIQuote.getQuote(page: self.currentPage, search: search) { (response) in
             if let quotes = response!["quotes"] as? [[String: Any]] {
                 do {
                     for item in quotes {
@@ -106,6 +125,19 @@ extension EQHomeViewController: UITableViewDelegate {
         cell.dateLabel.text = Array(self.filteredQuotes.keys)[section]
         
         return cell
+    }
+    
+}
+
+extension EQHomeViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.quotes = []
+        self.loadData(search: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
     
 }
