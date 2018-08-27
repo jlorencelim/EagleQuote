@@ -19,6 +19,19 @@ struct EQQuote: Codable {
         case createdAt = "createdAt"
         case clients = "clients"
     }
+    
+    func dateString() -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        
+        let date = dateFormatter.date(from: self.createdAt)!
+        
+        dateFormatter.dateFormat = "EEEE, MMM d yyyy"
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 // MARK: Convenience initializers and mutators
@@ -43,7 +56,7 @@ extension EQQuote {
         quoteID: Int? = nil,
         createdAt: String? = nil,
         clients: [EQClient]? = nil
-        ) -> EQQuote {
+    ) -> EQQuote {
         return EQQuote(
             quoteID: quoteID ?? self.quoteID,
             createdAt: createdAt ?? self.createdAt,

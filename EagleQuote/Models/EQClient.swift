@@ -33,6 +33,10 @@ struct EQClient: Codable {
         case isPrimary = "isPrimary"
         case premiums = "premiums"
     }
+    
+    func smokerString() -> String {
+        return isSmoker ? "Smoker" : "Non-smoker"
+    }
 }
 
 // MARK: Convenience initializers and mutators

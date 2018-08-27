@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrs-Tv-RIb">
-                        <rect key="frame" x="20" y="10" width="344" height="26.5"/>
+                        <rect key="frame" x="15" y="10" width="354" height="26.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -28,12 +28,15 @@
                 </subviews>
                 <color key="backgroundColor" name="Button"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="vrs-Tv-RIb" secondAttribute="trailing" constant="20" id="Eyd-5b-px7"/>
+                    <constraint firstAttribute="trailing" secondItem="vrs-Tv-RIb" secondAttribute="trailing" constant="15" id="Eyd-5b-px7"/>
                     <constraint firstItem="vrs-Tv-RIb" firstAttribute="top" secondItem="fLh-UE-WgD" secondAttribute="top" constant="10" id="ZVB-HZ-h43"/>
-                    <constraint firstItem="vrs-Tv-RIb" firstAttribute="leading" secondItem="fLh-UE-WgD" secondAttribute="leading" constant="20" id="sjt-3L-uQa"/>
+                    <constraint firstItem="vrs-Tv-RIb" firstAttribute="leading" secondItem="fLh-UE-WgD" secondAttribute="leading" constant="15" id="sjt-3L-uQa"/>
                     <constraint firstAttribute="bottom" secondItem="vrs-Tv-RIb" secondAttribute="bottom" constant="10" id="zPi-l7-MCi"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="vrs-Tv-RIb" id="Dbk-yg-wyp"/>
+            </connections>
             <point key="canvasLocation" x="-153" y="-16.5"/>
         </tableViewCell>
     </objects>

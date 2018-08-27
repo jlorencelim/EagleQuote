@@ -10,6 +10,12 @@ import UIKit
 
 class EQQuoteSectionTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

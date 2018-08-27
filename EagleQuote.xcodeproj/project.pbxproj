@@ -17,6 +17,7 @@
 		18005353213307FD00CD6249 /* EQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18005352213307FD00CD6249 /* EQClient.swift */; };
 		180053552133085F00CD6249 /* EQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053542133085F00CD6249 /* EQModel.swift */; };
 		180053572133089C00CD6249 /* EQQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053562133089C00CD6249 /* EQQuote.swift */; };
+		18BB048C2133B2BC0054EF77 /* EQAPIQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */; };
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
 		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
 		18D58C64213240CB004C305B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C63213240CB004C305B /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		18005352213307FD00CD6249 /* EQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQClient.swift; sourceTree = "<group>"; };
 		180053542133085F00CD6249 /* EQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQModel.swift; sourceTree = "<group>"; };
 		180053562133089C00CD6249 /* EQQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQQuote.swift; sourceTree = "<group>"; };
+		18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIQuote.swift; sourceTree = "<group>"; };
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D58C61213240CA004C305B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				18D58C702132453F004C305B /* EQAPIClient.swift */,
 				18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */,
+				18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				18D58C7A21324769004C305B /* R.generated.swift in Sources */,
 				180053512133077200CD6249 /* EQPremium.swift in Sources */,
 				1800534E2133039700CD6249 /* EQQuoteSectionTableViewCell.swift in Sources */,
+				18BB048C2133B2BC0054EF77 /* EQAPIQuote.swift in Sources */,
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
 				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
