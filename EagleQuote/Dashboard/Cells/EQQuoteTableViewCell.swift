@@ -8,7 +8,16 @@
 
 import UIKit
 
-class EQQuoteTableViewCell: UITableViewCell {
+protocol EQQuoteTableViewCellDelegate: class {
+    func showActionSheet(_ controller: EQQuoteTableViewCell, quote: EQQuote)
+}
+
+class EQQuoteTableViewCell: UITableViewCell, UIActionSheetDelegate {
+    
+    // MARK: - Properties
+    
+    weak var delegate: EQQuoteTableViewCellDelegate?
+    private var quote: EQQuote?
     
     // MARK: - Outlets
     
@@ -19,6 +28,9 @@ class EQQuoteTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func optionsButtonPressed(_ sender: UIButton) {
+        if let quote = self.quote {
+            self.delegate?.showActionSheet(self, quote: quote)
+        }
     }
     
     // MARK: - Lifecycle
@@ -36,6 +48,8 @@ class EQQuoteTableViewCell: UITableViewCell {
     
     // MARK: - Public Methods
     func configure(quote: EQQuote) {
+        self.quote = quote
+        
         let client = quote.clients[0]
         var avatar: UIImage?
         

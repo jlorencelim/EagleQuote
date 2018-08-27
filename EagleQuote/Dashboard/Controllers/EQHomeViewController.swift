@@ -130,6 +130,7 @@ extension EQHomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.quoteCell, for: indexPath)!
         let quote = self.filteredQuotes[key]![indexPath.row]
         
+        cell.delegate = self
         cell.configure(quote: quote)
         
         return cell
@@ -175,4 +176,19 @@ extension EQHomeViewController: UISearchBarDelegate {
         self.loadData(search: searchBar.text)
     }
     
+}
+
+extension EQHomeViewController: EQQuoteTableViewCellDelegate {
+    
+    func showActionSheet(_ controller: EQQuoteTableViewCell, quote: EQQuote) {
+        let actionSheet = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(title: "Send Quote by Email", style: .default, isEnabled: true) { (alert: UIAlertAction!) in
+            // TODO: navigate to send mail
+        }
+        actionSheet.addAction(title: "Cancel", style: .cancel, isEnabled: true, handler: nil)
+        
+        actionSheet.show()
+        
+    }
 }
