@@ -18,7 +18,7 @@ class EQAPIAuthentication: NSObject {
             "password": password
         ]
         
-        EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false) { (data) in
+        EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false, apiVersion: "2.0") { (data) in
             if let response = data!["response"] as? [String: Any] {
                 let status = response["status"] as! String
                 
@@ -50,7 +50,7 @@ class EQAPIAuthentication: NSObject {
             "token": token,
         ]
         
-        EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false) { (data) in
+        EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false, apiVersion: "2.0") { (data) in
             let status = data!["status"] as! String
             
             if status == "Success" {

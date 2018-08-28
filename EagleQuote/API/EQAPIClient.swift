@@ -45,10 +45,12 @@ class EQAPIClient: NSObject {
     public func getRequest(for link: String,
                            queryParams: [String: Any]?,
                            authenticated: Bool,
+                           apiVersion: String,
                            completion: @escaping ([String: Any]?) -> Void) -> Void {
         let request = self.request(for: link,
                                    method: .get,
                                    queryParams: queryParams,
+                                   apiVersion: apiVersion,
                                    authenticated: authenticated)
         
         self.performTask(with: request, completion: completion)
@@ -57,10 +59,12 @@ class EQAPIClient: NSObject {
     public func postRequest(for link: String,
                             bodyParams: [String: Any],
                             authenticated: Bool,
+                            apiVersion: String,
                             completion: @escaping ([String: Any]?) -> Void) -> Void {
         let request = self.request(for: link,
                                    method: .post,
                                    bodyParams: bodyParams,
+                                   apiVersion: apiVersion,
                                    authenticated: authenticated)
         
         self.performTask(with: request, completion: completion)
@@ -69,10 +73,12 @@ class EQAPIClient: NSObject {
     public func putRequest(for link: String,
                            bodyParams: [String: Any],
                            authenticated: Bool,
+                           apiVersion: String,
                            completion: @escaping ([String: Any]?) -> Void) -> Void {
         let request = self.request(for: link,
                                    method: .put,
                                    bodyParams: bodyParams,
+                                   apiVersion: apiVersion,
                                    authenticated: authenticated)
         
         self.performTask(with: request, completion: completion)
@@ -80,33 +86,39 @@ class EQAPIClient: NSObject {
     
     private func request(for endpoint: String,
                          method: HTTPMethod,
+                         apiVersion: String,
                          authenticated: Bool) -> DataRequest {
         return request(for: endpoint,
                        method: method,
                        bodyParams: nil,
                        queryParams: nil,
+                       apiVersion: apiVersion,
                        authenticated: authenticated)
     }
     
     private func request(for endpoint: String,
                          method: HTTPMethod,
                          bodyParams: [String: Any],
+                         apiVersion: String,
                          authenticated: Bool) -> DataRequest {
         return request(for: endpoint,
                        method: method,
                        bodyParams: bodyParams,
                        queryParams: nil,
+                       apiVersion: apiVersion,
                        authenticated: authenticated)
     }
     
     private func request(for endpoint: String,
                          method: HTTPMethod,
                          queryParams: [String: Any]?,
+                         apiVersion: String,
                          authenticated: Bool) -> DataRequest {
         return request(for: endpoint,
                        method: method,
                        bodyParams: nil,
                        queryParams: queryParams,
+                       apiVersion: apiVersion,
                        authenticated: authenticated)
     }
     
@@ -114,6 +126,7 @@ class EQAPIClient: NSObject {
                          method: HTTPMethod,
                          bodyParams: [String: Any]?,
                          queryParams: [String: Any]?,
+                         apiVersion: String,
                          authenticated: Bool) -> DataRequest {
         var params: [String: Any]?
         
@@ -125,7 +138,10 @@ class EQAPIClient: NSObject {
             params = queryParams
         }
         
-        var headers: HTTPHeaders = ["api-version": "2.0"]
+        var headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "api-version": apiVersion,
+        ]
         if authenticated {
             headers["Authorization"] = "Bearer \(self.authInstance!)"
         }
@@ -171,7 +187,7 @@ class EQAPIClient: NSObject {
                     let data = responseDataString.data(using: String.Encoding.utf8)!
                     
                     do {
-                        let errors = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                        let errors = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                         
                         completion(errors!["data"] as? [String : Any])
                     } catch {

@@ -316,10 +316,16 @@
                                 <action selector="onBackButtonPressed:" destination="AOM-Rh-53p" id="EPf-BE-Nj2"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="send" id="bNm-Ed-b7n"/>
+                        <barButtonItem key="rightBarButtonItem" image="send" id="bNm-Ed-b7n">
+                            <connections>
+                                <action selector="onSendButtonPressed:" destination="AOM-Rh-53p" id="ejm-DB-ggL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyTextView" destination="QP2-WA-jsa" id="2Df-Dy-RRW"/>
                         <outlet property="ccTokenField" destination="Zfy-GH-yAq" id="2OJ-rE-hEd"/>
+                        <outlet property="subjectTextField" destination="6xe-cO-sHv" id="9MG-I4-8uP"/>
                         <outlet property="toTokenField" destination="sMi-PF-dgH" id="Roc-LT-i52"/>
                     </connections>
                 </viewController>

@@ -38,10 +38,10 @@ class EQLoginViewController: UIViewController {
             alert.show()
         } else {
             // show alert
-            EQUtils.showLoadingAlert()
+            let alert = EQUtils.showLoadingAlert()
             
             EQAPIAuthentication.login(email: email, password: password) { (response) in
-                self.dismiss(animated: true, completion: {
+                alert.dismiss(animated: true, completion: {
                     if let error = response!["error"] as? String {
                         // show error message
                         let alert =  UIAlertController(title: "Sign-in Attempt", message: error)

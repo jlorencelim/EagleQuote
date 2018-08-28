@@ -92,9 +92,11 @@ class EQUtils: NSObject {
         return emailPredicate.evaluate(with: email)
     }
     
-    class func showLoadingAlert() {
+    class func showLoadingAlert() -> UIAlertController {
         let alert = UIAlertController(title: "Please wait...", message: nil, preferredStyle: .alert)
         alert.show()
+        
+        return alert
     }
     
 }
