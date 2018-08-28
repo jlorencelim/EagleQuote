@@ -57,22 +57,29 @@ class EQSendEmailViewController: UIViewController {
     }
     
     @IBAction func onSendButtonPressed(_ sender: UIBarButtonItem) {
-        if self.toTokenField.texts.count == 0 && self.ccTokenField.texts.count == 0 {
-            let alert =  UIAlertController(title: "Recipients required", message: "Please add at least one email to send to.")
-            alert.show()
-        } else {
-            let alert = EQUtils.showLoadingAlert()
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
             
-            EQAPIQuote.sendEmail(quoteId: self.quote.quoteID,
-                                 to: self.toTokenField.texts,
-                                 cc: self.ccTokenField.texts,
-                                 subject: self.subjectTextField.text!,
-                                 body: self.bodyTextView.text!) { (response) in
-                alert.dismiss(animated: true, completion: {
-                    if response!["status"] as! String == "Success" {
-                        self.navigationController?.popViewController()
-                    }
-                })
+            if self.toTokenField.texts.count == 0 && self.ccTokenField.texts.count == 0 {
+                let alert =  UIAlertController(title: "Recipients required", message: "Please add at least one email to send to.")
+                topController.present(alert, animated: true, completion: nil)
+            } else {
+                let alert = EQUtils.loadingAlert()
+                topController.present(alert, animated: true, completion: nil)
+                
+                EQAPIQuote.sendEmail(quoteId: self.quote.quoteID,
+                                     to: self.toTokenField.texts,
+                                     cc: self.ccTokenField.texts,
+                                     subject: self.subjectTextField.text!,
+                                     body: self.bodyTextView.text!) { (response) in
+                    alert.dismiss(animated: true, completion: {
+                        if response!["status"] as! String == "Success" {
+                            self.navigationController?.popViewController()
+                        }
+                    })
+                }
             }
         }
     }

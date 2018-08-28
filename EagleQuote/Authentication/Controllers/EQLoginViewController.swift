@@ -38,7 +38,8 @@ class EQLoginViewController: UIViewController {
             alert.show()
         } else {
             // show alert
-            let alert = EQUtils.showLoadingAlert()
+            let alert = EQUtils.loadingAlert()
+            alert.show()
             
             EQAPIAuthentication.login(email: email, password: password) { (response) in
                 alert.dismiss(animated: true, completion: {

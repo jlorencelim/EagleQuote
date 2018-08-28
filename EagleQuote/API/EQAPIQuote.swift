@@ -19,17 +19,24 @@ class EQAPIQuote: NSObject {
         ]
         
         EQAPIAuthentication.refreshToken { (response) in
-            EQAPIClient().getRequest(for: url, queryParams: params, authenticated: true, apiVersion: "2.0") { (data) in
-                if let response = data!["response"] as? [String: Any] {
-                    let status = response["status"] as! String
-                    
-                    if status == "Success" {
-                        completion(data!)
-                    } else {
-                        let error: [String: Any] = ["error": response["message"] as! String]
-                        completion(error)
+            let status = response!["status"] as! String
+            
+            if status == "Success" {
+                EQAPIClient().getRequest(for: url, queryParams: params, authenticated: true, apiVersion: "2.0") { (data) in
+                    if let response = data!["response"] as? [String: Any] {
+                        let status = response["status"] as! String
+                        
+                        if status == "Success" {
+                            completion(data!)
+                        } else {
+                            let error: [String: Any] = ["error": response["message"] as! String]
+                            completion(error)
+                        }
                     }
                 }
+            } else {
+                let error: [String: Any] = ["error": response!["message"] as! String]
+                completion(error)
             }
         }
     }
@@ -63,17 +70,24 @@ class EQAPIQuote: NSObject {
         ]
         
         EQAPIAuthentication.refreshToken { (response) in
-            EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: true, apiVersion: "1.0") { (data) in
-                if let response = data!["response"] as? [String: Any] {
-                    let status = response["status"] as! String
-                    
-                    if status == "Success" {
-                        completion(response)
-                    } else {
-                        let error: [String: Any] = ["error": response["message"] as! String]
-                        completion(error)
+            let status = response!["status"] as! String
+            
+            if status == "Success" {
+                EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: true, apiVersion: "1.0") { (data) in
+                    if let response = data!["response"] as? [String: Any] {
+                        let status = response["status"] as! String
+                        
+                        if status == "Success" {
+                            completion(response)
+                        } else {
+                            let error: [String: Any] = ["error": response["message"] as! String]
+                            completion(error)
+                        }
                     }
                 }
+            } else {
+                let error: [String: Any] = ["error": response!["message"] as! String]
+                completion(error)
             }
         }
     }

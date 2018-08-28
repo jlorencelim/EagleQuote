@@ -189,7 +189,12 @@ class EQAPIClient: NSObject {
                     do {
                         let errors = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
                         
-                        completion(errors!["data"] as? [String : Any])
+                        if let data = errors!["data"] as? [String : Any] {
+                            completion(data)
+                        } else {
+                            completion(errors)
+                        }
+                        
                     } catch {
                         print(error.localizedDescription)
                     }

@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="MKV-1L-iQ9">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwr-sK-pWY">
-                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.12941176470588234" blue="0.28235294117647058" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXU-hp-oVa">
@@ -60,7 +60,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -132,18 +132,18 @@
                             <constraint firstItem="Nwr-sK-pWY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Ax-Za-ykh"/>
                             <constraint firstItem="IeE-uc-3Ev" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="D1v-l6-DNd"/>
                             <constraint firstItem="IeE-uc-3Ev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DR9-j8-yzG"/>
-                            <constraint firstItem="Nwr-sK-pWY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Hnq-Po-yG8"/>
                             <constraint firstItem="7yr-b3-4kI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ISx-q8-cak"/>
                             <constraint firstItem="Nwr-sK-pWY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N83-Ko-hEX"/>
+                            <constraint firstItem="MKV-1L-iQ9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NXt-4Y-mjU"/>
                             <constraint firstItem="MKV-1L-iQ9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rys-cl-2aC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yFD-KK-UN5" secondAttribute="trailing" constant="25" id="Tzm-5n-B5n"/>
                             <constraint firstItem="mXU-hp-oVa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UNw-zO-pgS"/>
                             <constraint firstItem="mXU-hp-oVa" firstAttribute="top" secondItem="BXA-Qb-IkY" secondAttribute="bottom" constant="15" id="X9v-oD-tM1"/>
                             <constraint firstItem="MKV-1L-iQ9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZDM-to-wSd"/>
                             <constraint firstItem="yFD-KK-UN5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="a2v-BO-Zy1"/>
-                            <constraint firstItem="MKV-1L-iQ9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDg-fY-Kw7"/>
                             <constraint firstItem="BXA-Qb-IkY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="ijd-SZ-l6W"/>
                             <constraint firstItem="7yr-b3-4kI" firstAttribute="top" secondItem="mXU-hp-oVa" secondAttribute="bottom" constant="10" id="kFt-4r-Zke"/>
+                            <constraint firstItem="Nwr-sK-pWY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lEP-Y1-cze"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BXA-Qb-IkY" secondAttribute="trailing" constant="25" id="nza-ep-3A8"/>
                             <constraint firstItem="yFD-KK-UN5" firstAttribute="top" secondItem="7yr-b3-4kI" secondAttribute="bottom" constant="40" id="q5C-gR-of2"/>
                             <constraint firstItem="BXA-Qb-IkY" firstAttribute="top" secondItem="IeE-uc-3Ev" secondAttribute="bottom" constant="30" id="sk7-Wd-P9n"/>
