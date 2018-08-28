@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class EQQuoteSectionTableViewCell: UITableViewCell {
 
     // MARK: - Outlets

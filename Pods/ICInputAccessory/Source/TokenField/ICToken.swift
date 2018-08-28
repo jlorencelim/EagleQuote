@@ -70,7 +70,7 @@ class ICToken: UIView {
   }()
 
   private(set) lazy var textLabel: UILabel = {
-    let _label = ICInsetLabel(contentEdgeInsets: UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10), cornerRadius: .constant(15))
+    let _label = ICInsetLabel(contentEdgeInsets: UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15), cornerRadius: .constant(15))
     _label.textAlignment = .center
     _label.textColor = self.normalTextAttributes[.foregroundColor] as? UIColor
     _label.backgroundColor = self.normalTextAttributes[.backgroundColor] as? UIColor

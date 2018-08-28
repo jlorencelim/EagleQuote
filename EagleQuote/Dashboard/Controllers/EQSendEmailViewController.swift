@@ -90,8 +90,6 @@ class EQSendEmailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        
         self.initializeFields()
     }
 

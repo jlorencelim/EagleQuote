@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,50 +19,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="72.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnz-6m-tZs">
-                        <rect key="frame" x="0.0" y="0.0" width="377" height="67.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-WF-UBl">
+                        <rect key="frame" x="156" y="23" width="65" height="25"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H4P-WF-UBl">
-                                <rect key="frame" x="156" y="21.5" width="65" height="25"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-OB-h32">
-                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="66g-Na-xBq"/>
-                                            <constraint firstAttribute="height" constant="25" id="Od0-4G-kkK"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-Zb-y1A">
-                                        <rect key="frame" x="35" y="0.0" width="30" height="25"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-OB-h32">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="66g-Na-xBq"/>
+                                    <constraint firstAttribute="height" constant="25" id="Od0-4G-kkK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8P-Zb-y1A">
+                                <rect key="frame" x="35" y="0.0" width="30" height="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.10980392156862745" green="0.086274509803921567" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="H4P-WF-UBl" firstAttribute="centerX" secondItem="Gnz-6m-tZs" secondAttribute="centerX" id="3mR-zc-fAK"/>
-                            <constraint firstItem="H4P-WF-UBl" firstAttribute="centerY" secondItem="Gnz-6m-tZs" secondAttribute="centerY" id="4G0-oo-KrA"/>
-                        </constraints>
-                    </view>
+                    </stackView>
                 </subviews>
-                <color key="backgroundColor" red="0.14901960780000001" green="0.12941176469999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" red="0.10980392156862745" green="0.086274509803921567" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="Gnz-6m-tZs" firstAttribute="leading" secondItem="iiC-4y-BWj" secondAttribute="leading" id="EXc-vM-vTo"/>
-                    <constraint firstAttribute="bottom" secondItem="Gnz-6m-tZs" secondAttribute="bottom" constant="5" id="J3G-aH-QgB"/>
-                    <constraint firstItem="Gnz-6m-tZs" firstAttribute="top" secondItem="iiC-4y-BWj" secondAttribute="top" id="X0p-e8-lP1"/>
-                    <constraint firstAttribute="trailing" secondItem="Gnz-6m-tZs" secondAttribute="trailing" id="xDY-SF-PfJ"/>
+                    <constraint firstItem="H4P-WF-UBl" firstAttribute="centerY" secondItem="iiC-4y-BWj" secondAttribute="centerY" id="bVC-99-zVQ"/>
+                    <constraint firstItem="H4P-WF-UBl" firstAttribute="centerX" secondItem="iiC-4y-BWj" secondAttribute="centerX" id="hew-4H-cuT"/>
                 </constraints>
             </tableViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                    <color key="value" name="Button"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="highlightView" destination="Gnz-6m-tZs" id="8xM-In-zAu"/>
                 <outlet property="iconImageView" destination="3V0-OB-h32" id="mEv-93-Vja"/>
                 <outlet property="titleLabel" destination="E8P-Zb-y1A" id="46V-Sz-App"/>
             </connections>
             <point key="canvasLocation" x="30.5" y="63.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Button">
+            <color red="0.23499999939999999" green="0.76499998570000005" blue="0.76899999379999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // set initial view controller
+        // initializations
+        self.setupGlobalUIAdditions()
         self.setInitialViewController()
         
         // Third-party setup
@@ -61,19 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().disabledDistanceHandlingClasses.add(EQSendEmailViewController.self)
     }
     
-    private func setupGlobalUIAdditions(with window: UIWindow?) {
-        let fontName = "Helvetica"
-        let navAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont(name: fontName, size: 18)!,
+    private func setupGlobalUIAdditions() {
+        let navAttrs: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18, weight: .semibold),
                                                       NSAttributedStringKey.foregroundColor: UIColor.white]
         
-        UINavigationBar.appearance().backgroundColor = UIColor(hexString: "#271f4a")
-        UINavigationBar.appearance().barTintColor = R.color.background()
+        UINavigationBar.appearance().backgroundColor = R.color.navigationBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = navAttrs
-
-        // Window
-        window?.tintColor = R.color.background()
     }
     
     private func setInitialViewController() {

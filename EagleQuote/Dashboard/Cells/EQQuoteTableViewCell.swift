@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 protocol EQQuoteTableViewCellDelegate: class {
     func showActionSheet(_ controller: EQQuoteTableViewCell, quote: EQQuote)
 }

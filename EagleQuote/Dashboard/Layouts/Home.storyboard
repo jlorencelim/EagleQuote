@@ -60,6 +60,23 @@
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KaY-IG-t8X">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Fcr-za-cqM" userLabel="Loading">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-Ds-FN7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <color key="color" name="Background"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="ipv-Ds-FN7" firstAttribute="leading" secondItem="Fcr-za-cqM" secondAttribute="leading" id="2Jw-w5-785"/>
+                                        <constraint firstAttribute="trailing" secondItem="ipv-Ds-FN7" secondAttribute="trailing" id="5Rg-qI-Q7A"/>
+                                        <constraint firstItem="ipv-Ds-FN7" firstAttribute="top" secondItem="Fcr-za-cqM" secondAttribute="top" id="FYN-Fr-PKk"/>
+                                        <constraint firstAttribute="bottom" secondItem="ipv-Ds-FN7" secondAttribute="bottom" id="LLg-9n-HZT"/>
+                                    </constraints>
+                                </view>
                                 <connections>
                                     <outlet property="dataSource" destination="Ji2-VX-v5D" id="Px3-fL-wwK"/>
                                     <outlet property="delegate" destination="Ji2-VX-v5D" id="imk-aI-P1h"/>
@@ -143,9 +160,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cancelSearchButton" destination="g3p-DM-DNf" id="6UP-oL-F7T"/>
-                        <outlet property="drawerBarButtonItem" destination="XgR-VN-RIV" id="wJG-wY-zVp"/>
+                        <outlet property="loadingView" destination="Fcr-za-cqM" id="60G-Lw-BNh"/>
                         <outlet property="searchBar" destination="Sia-sz-l72" id="IMR-5g-5p5"/>
-                        <outlet property="searchBarButtonItem" destination="jUz-J9-jgH" id="hnx-Wx-Ddd"/>
                         <outlet property="searchBarHeight" destination="p49-Ph-vaj" id="WK8-Ei-7mF"/>
                         <outlet property="tableView" destination="KaY-IG-t8X" id="tO9-04-g1u"/>
                         <segue destination="AOM-Rh-53p" kind="show" identifier="sendEmail" id="MJs-WY-rXC"/>
@@ -268,7 +284,7 @@
                                 <rect key="frame" x="0.0" y="229" width="375" height="438"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-WA-jsa">
-                                        <rect key="frame" x="15" y="15" width="345" height="408"/>
+                                        <rect key="frame" x="10" y="15" width="355" height="408"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -277,9 +293,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="QP2-WA-jsa" secondAttribute="bottom" constant="15" id="97q-g8-2Xb"/>
-                                    <constraint firstAttribute="trailing" secondItem="QP2-WA-jsa" secondAttribute="trailing" constant="15" id="BRb-nP-qSS"/>
+                                    <constraint firstAttribute="trailing" secondItem="QP2-WA-jsa" secondAttribute="trailing" constant="10" id="BRb-nP-qSS"/>
                                     <constraint firstItem="QP2-WA-jsa" firstAttribute="top" secondItem="iL3-eB-1be" secondAttribute="top" constant="15" id="XNr-C2-zLV"/>
-                                    <constraint firstItem="QP2-WA-jsa" firstAttribute="leading" secondItem="iL3-eB-1be" secondAttribute="leading" constant="15" id="tOA-zg-pSb"/>
+                                    <constraint firstItem="QP2-WA-jsa" firstAttribute="leading" secondItem="iL3-eB-1be" secondAttribute="leading" constant="10" id="tOA-zg-pSb"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -345,23 +361,24 @@
                                 <rect key="frame" x="0.0" y="20" width="240" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="q2a-nN-iNi">
-                                        <rect key="frame" x="70" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="60" y="10" width="120" height="120"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="4uv-ZY-EeB"/>
-                                            <constraint firstAttribute="height" constant="100" id="Fl4-Ro-nv6"/>
+                                            <constraint firstAttribute="width" constant="120" id="4uv-ZY-EeB"/>
+                                            <constraint firstAttribute="height" constant="120" id="Fl4-Ro-nv6"/>
                                         </constraints>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zar-G6-2UH">
-                                        <rect key="frame" x="0.0" y="161" width="240" height="486"/>
+                                        <rect key="frame" x="0.0" y="179" width="240" height="468"/>
                                         <color key="backgroundColor" name="Background"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="dataSource" destination="4zj-oU-kkN" id="WIV-48-vUA"/>
                                             <outlet property="delegate" destination="4zj-oU-kkN" id="qke-PD-196"/>
                                         </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info@blackfintech.co" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-pq-2Co">
-                                        <rect key="frame" x="37" y="125" width="167" height="21"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <rect key="frame" x="46.5" y="145" width="148.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EQDrawerItemTableViewCell: UITableViewCell {
+
+class EQDrawerItemTableViewCell: EQSelectableTableViewCell {
 
     // MARK: - Outlets
     
-    @IBOutlet weak var highlightView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     

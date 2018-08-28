@@ -17,9 +17,8 @@
 		18005353213307FD00CD6249 /* EQClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18005352213307FD00CD6249 /* EQClient.swift */; };
 		180053552133085F00CD6249 /* EQModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053542133085F00CD6249 /* EQModel.swift */; };
 		180053572133089C00CD6249 /* EQQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180053562133089C00CD6249 /* EQQuote.swift */; };
+		1837914C21355CFB000AAE45 /* EQSelectableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1837914B21355CFB000AAE45 /* EQSelectableTableViewCell.swift */; };
 		18BB048C2133B2BC0054EF77 /* EQAPIQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */; };
-		18BB048E2133F2370054EF77 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BB048D2133F2370054EF77 /* LoadingCell.xib */; };
-		18BB04902133F2BB0054EF77 /* EQLoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB048F2133F2BB0054EF77 /* EQLoadingTableViewCell.swift */; };
 		18BB0492213409F60054EF77 /* EQSendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB0491213409F60054EF77 /* EQSendEmailViewController.swift */; };
 		18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C5C213240CA004C305B /* AppDelegate.swift */; };
 		18D58C62213240CA004C305B /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D58C60213240CA004C305B /* Authentication.storyboard */; };
@@ -28,7 +27,6 @@
 		18D58C712132453F004C305B /* EQAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C702132453F004C305B /* EQAPIClient.swift */; };
 		18D58C73213245B3004C305B /* EQConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C72213245B3004C305B /* EQConstants.swift */; };
 		18D58C752132460A004C305B /* EQUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C742132460A004C305B /* EQUtils.swift */; };
-		18D58C7721324683004C305B /* EQSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7621324683004C305B /* EQSingleton.swift */; };
 		18D58C7A21324769004C305B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7921324769004C305B /* R.generated.swift */; };
 		18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C7F21324AE8004C305B /* EQLoginViewController.swift */; };
 		18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */; };
@@ -49,9 +47,8 @@
 		18005352213307FD00CD6249 /* EQClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQClient.swift; sourceTree = "<group>"; };
 		180053542133085F00CD6249 /* EQModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQModel.swift; sourceTree = "<group>"; };
 		180053562133089C00CD6249 /* EQQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQQuote.swift; sourceTree = "<group>"; };
+		1837914B21355CFB000AAE45 /* EQSelectableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSelectableTableViewCell.swift; sourceTree = "<group>"; };
 		18BB048B2133B2BC0054EF77 /* EQAPIQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIQuote.swift; sourceTree = "<group>"; };
-		18BB048D2133F2370054EF77 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
-		18BB048F2133F2BB0054EF77 /* EQLoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLoadingTableViewCell.swift; sourceTree = "<group>"; };
 		18BB0491213409F60054EF77 /* EQSendEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSendEmailViewController.swift; sourceTree = "<group>"; };
 		18D58C59213240CA004C305B /* EagleQuote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EagleQuote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D58C5C213240CA004C305B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +59,6 @@
 		18D58C702132453F004C305B /* EQAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIClient.swift; sourceTree = "<group>"; };
 		18D58C72213245B3004C305B /* EQConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQConstants.swift; sourceTree = "<group>"; };
 		18D58C742132460A004C305B /* EQUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQUtils.swift; sourceTree = "<group>"; };
-		18D58C7621324683004C305B /* EQSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQSingleton.swift; sourceTree = "<group>"; };
 		18D58C7921324769004C305B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		18D58C7F21324AE8004C305B /* EQLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQLoginViewController.swift; sourceTree = "<group>"; };
 		18D58C8121325E3F004C305B /* EQAPIAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EQAPIAuthentication.swift; sourceTree = "<group>"; };
@@ -100,7 +96,6 @@
 				1800533E2132815800CD6249 /* EQDrawerItemTableViewCell.swift */,
 				180053492132EEB600CD6249 /* EQQuoteTableViewCell.swift */,
 				1800534D2133039700CD6249 /* EQQuoteSectionTableViewCell.swift */,
-				18BB048F2133F2BB0054EF77 /* EQLoadingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -156,7 +151,7 @@
 				18D58C7921324769004C305B /* R.generated.swift */,
 				18D58C72213245B3004C305B /* EQConstants.swift */,
 				18D58C742132460A004C305B /* EQUtils.swift */,
-				18D58C7621324683004C305B /* EQSingleton.swift */,
+				1837914B21355CFB000AAE45 /* EQSelectableTableViewCell.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,7 +216,6 @@
 				18005340213281DB00CD6249 /* DrawerItem.xib */,
 				180053452132E52700CD6249 /* QuoteCell.xib */,
 				1800534B2133008800CD6249 /* QuoteSectionCell.xib */,
-				18BB048D2133F2370054EF77 /* LoadingCell.xib */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -313,7 +307,6 @@
 				18D58C62213240CA004C305B /* Authentication.storyboard in Resources */,
 				18D58C8821326CD0004C305B /* Home.storyboard in Resources */,
 				180053462132E52700CD6249 /* QuoteCell.xib in Resources */,
-				18BB048E2133F2370054EF77 /* LoadingCell.xib in Resources */,
 				18005341213281DB00CD6249 /* DrawerItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,16 +389,15 @@
 				18D58C712132453F004C305B /* EQAPIClient.swift in Sources */,
 				18BB0492213409F60054EF77 /* EQSendEmailViewController.swift in Sources */,
 				18D58C5D213240CA004C305B /* AppDelegate.swift in Sources */,
-				18D58C7721324683004C305B /* EQSingleton.swift in Sources */,
 				18D58C8221325E3F004C305B /* EQAPIAuthentication.swift in Sources */,
 				18D58C8C21327DC4004C305B /* EQDrawerViewController.swift in Sources */,
 				18D58C73213245B3004C305B /* EQConstants.swift in Sources */,
 				18D58C8021324AE8004C305B /* EQLoginViewController.swift in Sources */,
+				1837914C21355CFB000AAE45 /* EQSelectableTableViewCell.swift in Sources */,
 				180053572133089C00CD6249 /* EQQuote.swift in Sources */,
 				18005353213307FD00CD6249 /* EQClient.swift in Sources */,
 				1800534A2132EEB600CD6249 /* EQQuoteTableViewCell.swift in Sources */,
 				18D58C8A21326D4F004C305B /* EQHomeViewController.swift in Sources */,
-				18BB04902133F2BB0054EF77 /* EQLoadingTableViewCell.swift in Sources */,
 				1800533F2132815800CD6249 /* EQDrawerItemTableViewCell.swift in Sources */,
 				18D58C752132460A004C305B /* EQUtils.swift in Sources */,
 				180053552133085F00CD6249 /* EQModel.swift in Sources */,

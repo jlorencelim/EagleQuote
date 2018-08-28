@@ -21,20 +21,11 @@ class EQHomeViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var drawerBarButtonItem: UIBarButtonItem! {
-        didSet {
-            self.drawerBarButtonItem.tintColor = UIColor.white
-        }
-    }
-    @IBOutlet weak var searchBarButtonItem: UIBarButtonItem! {
-        didSet {
-            self.searchBarButtonItem.tintColor = UIColor.white
-        }
-    }
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchBarHeight: NSLayoutConstraint!
     @IBOutlet weak var cancelSearchButton: UIButton!
+    @IBOutlet weak var loadingView: UIView!
     
     // MARK: - Actions
     
@@ -53,6 +44,7 @@ class EQHomeViewController: UIViewController {
         self.searchBar.endEditing(true)
         self.searchBar.text = ""
         
+        self.quotes = []
         self.loadData(search: nil)
     }
     
@@ -64,7 +56,6 @@ class EQHomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.tableView.register(R.nib.quoteCell)
         self.tableView.register(R.nib.quoteSectionCell)
-        self.tableView.register(R.nib.loadingCell)
         
         self.loadData(search: nil)
     }
@@ -115,6 +106,8 @@ class EQHomeViewController: UIViewController {
                 self.tableView.isHidden = false
             }
             
+            self.loadingView.height = 0
+            self.loadingView.isHidden = true
             self.isLoading = false
             self.tableView.reloadData()
         }
@@ -129,21 +122,13 @@ extension EQHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let keys = Array(self.filteredQuotes.keys)
-        let key = keys[section]
-        return self.isLoading ? self.filteredQuotes[keys[keys.count - 1]]!.count + 1 : self.filteredQuotes[key]!.count
+        let key = Array(self.filteredQuotes.keys)[section]
+        return self.filteredQuotes[key]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let keys = Array(self.filteredQuotes.keys)
-        let key = keys[indexPath.section]
-        
-        // show loading indicator
-        if self.isLoading && indexPath.section == keys.count - 1 && indexPath.row == self.filteredQuotes[key]!.count {
-            return tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadingCell, for: indexPath)!
-        }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.quoteCell, for: indexPath)!
+        let key = Array(self.filteredQuotes.keys)[indexPath.section]
         let quote = self.filteredQuotes[key]![indexPath.row]
         
         cell.delegate = self
@@ -172,8 +157,15 @@ extension EQHomeViewController: UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if self.quotes.count > 0 && self.quotes.count != self.totalQuotes && !self.isLoading && offsetY > contentHeight - scrollView.frame.size.height {
+        if self.quotes.count > 0 &&
+            self.quotes.count != self.totalQuotes &&
+            !self.isLoading &&
+            offsetY > 0 &&
+            offsetY > contentHeight - scrollView.frame.size.height {
+            
             self.currentPage += 1
+            self.loadingView.height = 80
+            self.loadingView.isHidden = false
             self.isLoading = true
             self.tableView.reloadData()
             

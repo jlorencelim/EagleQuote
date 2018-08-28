@@ -72,7 +72,7 @@ extension EQDrawerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.drawerItemCell, for: indexPath)!
         
         if indexPath.row == 0 {
-            cell.highlightView.backgroundColor = R.color.button()
+            cell.contentView.backgroundColor = R.color.button()
         }
 
         cell.titleLabel?.text = self.drawerItems[indexPath.row]["title"]
@@ -86,9 +86,6 @@ extension EQDrawerViewController: UITableViewDataSource {
 extension EQDrawerViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.drawerItemCell, for: indexPath)!
-        cell.highlightView.backgroundColor = R.color.button()
-        
         self.tableView.reloadData()
         
         switch indexPath.row {
@@ -108,13 +105,6 @@ extension EQDrawerViewController: UITableViewDelegate {
         default:
             return
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.drawerItemCell, for: indexPath)!
-        cell.highlightView.backgroundColor = UIColor(hexString: "#1c163e")
-        
-        self.tableView.reloadData()
     }
     
 }
