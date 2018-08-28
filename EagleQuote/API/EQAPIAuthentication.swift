@@ -13,9 +13,10 @@ class EQAPIAuthentication: NSObject {
     
     class func login(email: String, password: String, completion: @escaping ([String: Any]?) -> Void) {
         let url = APIConstants.URL + "/LogIn/"
-        let params = [
+        let params: [String: Any] = [
             "email": email,
-            "password": password
+            "password": password,
+            "rememberMe": true,
         ]
         
         EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false, apiVersion: "2.0") { (data) in
@@ -65,4 +66,36 @@ class EQAPIAuthentication: NSObject {
             }
         }
     }
+    
+    class func refreshToken(completion: @escaping ([String: Any]?) -> Void) {
+        let url = APIConstants.URL + "/GenerateToken/"
+        let user = EQUtils.userDefaultsObject(with: UserDefaultsConstants.User) as! [String: Any]
+        let token = EQUtils.userDefaultsValue(with: UserDefaultsConstants.RefreshToken) as! String
+        let params: [String: Any] = [
+            "email": user["email"] as! String,
+            "TokenResource": [
+                "Token": token,
+                "Type": "access",
+            ],
+            "rememberMe": true,
+        ]
+        
+        EQAPIClient().postRequest(for: url, bodyParams: params, authenticated: false, apiVersion: "2.0") { (data) in
+            if let response = data!["response"] as? [String: Any] {
+                let status = response["status"] as! String
+                
+                if status == "Success" {
+                    let authorization = data!["authorization"] as! [String: Any]
+                    
+                    EQUtils.setUserDefaultsValue(authorization["token"] as! String, key: UserDefaultsConstants.AuthToken)
+                    
+                    completion(response)
+                } else {
+                    let error: [String: Any] = ["error": response["message"] as! String]
+                    completion(error)
+                }
+            }
+        }
+    }
+    
 }
